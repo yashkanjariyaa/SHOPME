@@ -1,13 +1,198 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*:root{
+  --Slides-height : auto;
+}*/
+body{
+  background-color: rgb(0, 0, 0);
+}
+#bigger-wrapper{
+  width : 97vw;
+  height : 100%;
+  margin : 10px;
+  position : relative;
+}
+#smaller-wrapper{
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product{
+  background-color: white;
+  padding : 20px;
+  border : black solid 1px;
+  border-radius: 20px;
+  margin : 10px;
+  height : 92vh;
+  width : 43%;
+  display : flex;
+  gap : 1px;
+  flex-direction: column;
+  position : relative;
+  overflow: hidden;
+}
+h1{
+  position : fixed;
+  color : white;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -7px;
+  padding : 0;
+  margin : 5px;
+}
+h2{
+  padding : 0;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -5px;
+  bottom : 35%;
+}
+h3{
+  font-size : 50px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -2px;
+  bottom : 30%;
+}
+#description{
+  font-family: 'Roboto', sans-serif;
+  bottom : 25%;
+}
+.discount{
+  font-size : 30px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -2px;
+  bottom : 10%;
+}
+.price{
+  font-size : 60px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -2px;
+  bottom : 15%;
+}
+.moreinfo{
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -2px;
+}
+.rating{
+  font-size: 30px;
+  bottom : 5%;
+}
+.category{
+  font-size: 30px;
+  top : 2%;
+}
+.stock{
+  bottom : 2%;
+  letter-spacing: -1px;
+}
+.info{
+  margin : 0;
+  flex : 1;
+  max-width: 100%;
+  box-sizing : border-box;
+  position : absolute;
+}
+.thumbnail{
+  display : none;
+}
+.buy{
+  bottom : 5%;
+  color : black;
+  right : 10px;
+}
+.atc{
+  bottom : 2%;
+  color : black;
+  right : 10px;
+}
+.gallery{
+  display : grid;
+  place-items: center;
+  margin : 10px;
+  height : 600px;
+}
+.image-container{
+  height : 550px;
+  width : 42vw;
+  display : flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  margin : 0px;
+  top : 7%;
+}
+.slides{
+  width : auto;
+  height : auto;
+  object-fit : cover;
+}
+.slides img{
+  width : auto;
+  height : 400px;
+}
+.image-container .slides {
+  scroll-snap-align: start;
+}
+.image-container::-webkit-scrollbar{
+  display: none;
+}
+a{
+  color : white;
+  font-style: none;
+  text-decoration: none;
+  padding : 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin : 5px;
+  padding : 20px;
+}
+a.navBar{
+  position : absolute;
+  left : 50vw;
+}
+a.topNav{
+  right : 5px;
+  font-size: 40px;
+  position : fixed;
+}
+a.next{
+  position : fixed;
+  right : 5px;
+  bottom : 5px;
+}
+a.prev{
+  position : fixed;
+  left : 5px;
+  bottom : 5px;
+}
+.index{
+  color : white;
+  position : fixed;
+  left : 5px;
+  top : 120px;
+  font-size: 40px;
+  margin : 5px;
+  padding : 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.para{
+  color : white;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  margin : 20px;
+  position : relative;
+  top : 150px;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+#homeHeading{
+  margin : 20px;
+}
+#productList{
+  color : white;
+  margin : 20px;
+  position : absolute;
+  top : 350px;
+  left : 50vw;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
