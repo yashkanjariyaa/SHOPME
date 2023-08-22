@@ -1,8 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Product from './product';
+
 function Product_One(){
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  let [category, setCategory] = useState('');
+  const categoryArray = [];
+  const productsOne = products.slice(0,9);
+  async function search(){
+    if(category != null){
+      for(let i = 0; i < 10; i++){
+        if(category === productsOne.category[i]){
+          categoryArray.push(productsOne[i]);
+        }else{
+          alert('category does not exist');
+        }
+      }
+    }
+  }
+  function clearCategory(){
+    setCategory('');
+  }
   useEffect(()=>{
     async function fetchProducts(){
       try {
@@ -60,11 +78,27 @@ function Product_One(){
   return(
     <div id='bigger-wrapper'>
       <h1>SHOPME.</h1>
+            <div>
+                <ul className="navBarHome">
+                    <li><a className='navlink' href='http://localhost:3000/'>Home</a></li>
+                    <li><a className='navlink' href='http://localhost:3000/about'>About</a></li>
+                    <li><a className='navlink' href='http://localhost:3000/contacts'>Contacts</a></li>
+                </ul>
+            </div>
       <p class='index'>1/3</p>
-      <a href="http://localhost:3000/" className = "topNav">HOME</a>
       <a href="http://localhost:3000/productsTwo" className = "next navbar">NEXT</a>
+      {/*<form class="myForm"action={search}>
+        <input type='text' 
+        placeholder='Search' 
+        className='search' 
+        value={category}
+        onChange={(e)=>setCategory(e.target.value)}>
+        </input>
+        <input type='submit' value='Search'></input>
+        <button onClick={clearCategory}>All</button>
+      </form>*/}
       <div id='smaller-wrapper'>
-        {products.slice(0,9).map((product,index)=>(
+        {productsOne.map((product,index)=>(
           <Product key={index} product={product}></Product>
         ))}
       </div>

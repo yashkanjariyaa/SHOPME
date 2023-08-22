@@ -33,7 +33,6 @@ function Product_Two(){
     <div id='bigger-wrapper'>
       <h1>SHOPME.</h1>
       <p className='index'>2/3</p>
-      <a href="http://localhost:3000/" className = "topNav">Home</a>
       <a href="http://localhost:3000/productsOne" className = "navbar prev">PREVIOUS</a>
       <a href="http://localhost:3000/productsThree" className = "navbar next">NEXT</a>
       <div id='smaller-wrapper'>

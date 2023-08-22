@@ -34,7 +34,6 @@ function Product_Three(){
     <div id='bigger-wrapper'>
       <h1>SHOPME.</h1>
       <p className='index'>3/3</p>
-      <a href="http://localhost:3000/" className = "topNav">HOME</a>
       <a href="http://localhost:3000/ProductsTwo" className = "navbar prev">PREVIOUS</a>
       <div id='smaller-wrapper'>
         {products.slice(20,29).map((product,index)=>(
