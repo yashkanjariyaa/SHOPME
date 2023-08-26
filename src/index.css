@@ -1,44 +1,41 @@
 :root{
   --offWhite-color : #efefef;
+  --offBlack-color : #181918;
 }
 body{
-  background-color: #18191b;
+  background-color: var(--offBlack-color);
   position : relative;
+  margin : 0;
 }
-/*Products page
-#bigger-wrapper{
-  width : 97vw;
-  height : 100%;
-  margin : 10px;
-  position : relative;
-}*/
-.myForm{
-  position : fixed;
-  bottom : 10%;
-}
+/*Products page*/
 #smaller-wrapper{
   display : flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top :70px;
+  width: 100%;
+  z-index: -1;
 }
 .product{
   background-color:var(--offWhite-color);
   padding : 20px;
-  border : black solid 1px;
+  border : var(--offBlack-color) solid 1px;
   border-radius: 20px;
   margin : 10px;
-  height : 92vh;
+  height : 90vh;
   width : 43%;
   display : flex;
   gap : 1px;
   flex-direction: column;
   position : relative;
+  top : 20px;
   overflow: hidden;
 }
 h1{
   position : fixed;
+  font-size: 70px;
   color : var(--offWhite-color);
-  font-size: 100px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: -7px;
   padding : 0;
@@ -139,6 +136,50 @@ h3{
 .image-container::-webkit-scrollbar{
   display: none;
 }
+.logo{
+  position : absolute;
+  font-size: 70px;
+}
+.header{
+  background: #000000;
+  height : 9vh;
+  width: 100vw;
+  position : fixed;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin : 0px;
+}
+/*search bar for products*/
+.myForm{
+  position: absolute;
+  left : 30%;
+  top : 10%;
+}
+.myForm input[type="text"]{
+  height: 40px;
+  width : 400px;
+  background: var(--offBlack-color);
+  color : var(--offWhite-color);
+  border : none;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  padding : 5px 15px;
+  border-radius: 15px;
+}
+.Button{
+  color : var(--offWhite-color);
+  background-color: var(--offBlack-color);
+  border : none;
+  margin : 10px;
+  height: 50px;
+  padding: 5px 15px;
+  font-size: 20px;
+  letter-spacing: -1px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
 /*Navigation for products pages*/
 a{
   color : var(--offWhite-color);
@@ -148,7 +189,6 @@ a{
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   margin : 5px;
-  padding : 20px;
 }
 a.navBar{
   position : absolute;
@@ -164,6 +204,10 @@ a.next{
   right : 5px;
   bottom : 5px;
 }
+a.next:hover,a.prev:hover{
+  background-color: #000000;
+  border-radius: 15px;
+}
 a.prev{
   position : fixed;
   left : 5px;
@@ -171,13 +215,14 @@ a.prev{
 }
 .index{
   color : var(--offWhite-color);
-  position : fixed;
-  left : 5px;
-  top : 120px;
+  left : 0;
+  position: fixed;
+  top : 70px;
   font-size: 40px;
-  margin : 5px;
-  padding : 20px;
+  margin : 15px 5px;
+  padding : 10px;
   font-family: 'Roboto', sans-serif;
+  font-size: 30px;
 }
 /*Home page*/
 .para{
@@ -196,7 +241,9 @@ a.prev{
   top : 200px;
 }
 #homeHeading{
+  font-size: 100px;
   margin : 20px;
+  position : absolute;
 }
 #productList{
   color : var(--offWhite-color);
@@ -207,18 +254,6 @@ a.prev{
   font-size: 70px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: -1px;
-}
-.navBarHome{
-  display : flex;
-  flex-direction: row;
-  position : fixed;
-  right : 20px;
-  list-style-type: none;
-}
-.navBarHome .navlink:hover{
-  color : black;
-  background-color:var(--offWhite-color);
-  border-radius: 15px;
 }
 .intro {
   position : absolute;
@@ -239,4 +274,25 @@ a.prev{
 /*Contacts*/
 .paraContacts{
   top : 120px;
+}
+.navBarHome{
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+  position : absolute;
+  right : 20px;
+  top : 15px;
+  list-style-type: none;
+}
+.navBarHome .navlink{
+  margin : 20px;
+  color : var(--offWhite-color)
+}
+.navBarHome .navlink:hover{
+  background-color:var(--offBlack-color);
+  border-radius: 15px;
+}
+.navBarHome .homeLink:hover{
+  background-color: #000000;
+  border-radius: 15px;;
 }

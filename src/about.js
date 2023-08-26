@@ -5,9 +5,9 @@ function About(){
         <div>
         <div>
             <ul className="navBarHome">
-                <li><a className='navlink' href='http://localhost:3000/'>Home</a></li>
-                <li><a className='navlink' href='http://localhost:3000/about'>About</a></li>
-                <li><a className='navlink' href='http://localhost:3000/contacts'>Contacts</a></li>
+                <li><a className='navlink homeLink' href='http://localhost:3000/'>Home</a></li>
+                <li><a className='navlink homeLink' href='http://localhost:3000/about'>About</a></li>
+                <li><a className='navlink homeLink' href='http://localhost:3000/contacts'>Contacts</a></li>
             </ul>
         </div>
         <h2 className="tag">About.</h2>
