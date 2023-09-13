@@ -1,0 +1,78 @@
+:root{
+    --offWhite-color : #efefef;
+    --offBlack-color : #181918;
+  }
+@media screen and (max-width : 701px){
+    .header{
+        height : 65px;
+        width : 100%;
+        overflow: hidden;
+    }
+    .myForm input[type='text']{
+        height: 30px;
+        width : 200px;
+        margin : 3px;
+    }
+    .myForm{
+        top : 3px;
+        margin : 0;
+        right : 100px;
+    }
+    .clear , .search{
+        margin : 5px;
+    }
+    .productNav{
+        display : flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin : 5px;
+        position: absolute;
+        right : 0px;
+        top : 6vh;
+        text-align: right;
+        background-color: black;
+        width: 100px;
+        height: 140px;
+        border-radius: 15px;
+    }
+    .productNavInvisible{
+        display: none;
+    }
+    .navBarHome li{
+        margin : 5px 0px;
+        padding: 5px 0px;
+        width: max-content;
+        border-radius: 10px;
+    }
+    .navBarHome li:hover{
+        background-color: var(--offBlack-color);
+    }
+    .navBarHome li a{
+        padding: 0px;
+    }
+    .menu{
+        display: inline-block;
+        color : var(--offWhite-color);
+        position: absolute;
+        right : 25px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        background-color: var(--offBlack-color);
+        padding : 12px;
+        border-radius: 15px;
+        border : none;
+        letter-spacing: -1px;
+    }
+    .logo{
+        font-size: 30px;
+        letter-spacing: -3px;
+    }
+    .name{
+        display: none;
+    }
+    .letter{
+        display : inline-block;
+        left : 10px;
+        font-size: 50px;
+    }
+}

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Product from './product';
-import { clear } from '@testing-library/user-event/dist/clear';
-import axios from "axios";
 
 function Product_One(){
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState('');
   const [displayProducts, setDisplayProducts] = useState([]);
+  const [flag, setFlag] = useState(false);
+  const [skip, setSkip] = useState(0);
+  const show = 10;
+  //let showFlag = 0;
   
   useEffect(()=>{      
       fetch('https://dummyjson.com/products')
@@ -15,7 +16,6 @@ function Product_One(){
         .then((data)=>{
           console.log(typeof data)
           const productsRecieved = data.products;
-          setProducts(productsRecieved);
           const slicedProducts = data.products.slice(0,9); 
           setDisplayProducts(slicedProducts);
           console.log(displayProducts);
@@ -27,54 +27,65 @@ function Product_One(){
         });
     },[]);
   function handleSearch(){
-        /*axios
-        .get(
-          'https://dummyjson.com/products/category/${category}'
-          )
-        .then((response)=>{
-          const data = response.data;
-          console.log(typeof data);
-          console.log(data);
-          const slicedProducts = data.products;
-          setDisplayProducts(slicedProducts);
-          console.log(displayProducts);
-        })
-        .catch((err)=>{
-          console.log(err.message);
-        })*/
-        try{
-          console.log(category);
-          const filteredProdcuts = products.filter(
-              (product)=>{
-                return category.toLowerCase() === product.category.toLowerCase();
-              }
-          );
-        setDisplayProducts(filteredProdcuts);
+    const lowerCaseCategory = category.toLowerCase();
+    fetch(`https://dummyjson.com/products/category/${lowerCaseCategory}`)
+      .then((response)=>{
+        console.log(response);
+        return response.json();
+      })
+      .then((data)=>{
+        console.log(data);
+        console.log(typeof data);
+        const slicedProducts = data.products;
+        setDisplayProducts(slicedProducts);
         console.log(displayProducts);
-    }catch(err){
-      console.log(err);
+      })
+      .catch((err)=>{
+        console.log(err.message);
+      });
+  }
+  /*function next(){
+    showFlag++;
+    if(showFlag<3 && showFlag!=0){
+      setSkip(showFlag*10);
     }
-}
+    fetch(`https://dummyjson.com/products?limit=${show}&skip=${skip}&select=title,price,discountPercentage,category,rating,description,stock,brand,images`)
+    .then((response)=>{
+      console.log(response);
+      return response.json();
+    })
+    .then((data)=>{
+      console.log(data);
+      console.log(typeof data);
+      const slicedProducts = data.products;
+      setDisplayProducts(slicedProducts);
+      console.log(displayProducts);
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+  }*/
   function handleChange(event){
     const searchedCategory = event.target.value;
-    setCategory(searchedCategory.toLowerCase());
+    setCategory(searchedCategory);
   }
   function clearCategory(){
     setCategory('');
   }
+  function displayMenu(){
+    let newFlag = !flag;
+    setFlag(newFlag);
+    console.log(newFlag);
+    setMenuClass(newFlag?'.productNavInvisible':'.productNav');
+  }
   if(loading){
     return <div>Loading...</div>;
   }
-
   return(
     <div id='bigger-wrapper'>
             <div className='header'>
-              <h1 className='logo'>SHOPME.</h1>
-              <ul className="navBarHome">
-                  <li><a className='navlink' href='http://localhost:3000/'>Home</a></li>
-                  <li><a className='navlink' href='http://localhost:3000/about'>About</a></li>
-                  <li><a className='navlink' href='http://localhost:3000/contacts'>Contacts</a></li>
-              </ul>
+                <h1 className='name logo'>SHOPME.</h1>
+                <h1 className='letter logo'>S</h1>
               <form className="myForm">
                 <input type='text' 
                 placeholder='Search for Categories' 
@@ -82,15 +93,21 @@ function Product_One(){
                 value={category}
                 onChange={handleChange}>
                 </input>
-                <button type='button' className='search Button' onClick={handleSearch}>Search</button>
+                <button className='search Button' onClick={handleSearch}>Search</button>
                 <button className='clear Button' onClick={clearCategory}>Clear</button>
               </form>
+                <button className='menu' onClick={displayMenu}>Menu</button>
+                    <ul className='productNav'>
+                      <li><a className='navlink' href='../'>Home</a></li>
+                      <li><a className='navlink' href='../about'>About</a></li>
+                      <li><a className='navlink' href='../contacts'>Contacts</a></li>
+                    </ul>
             </div>
       <p className='index'>1/3</p>
       <div>
-      { 
+        { 
         (category ==='')?
-          <a href="http://localhost:3000/productsTwo" 
+          <a href='../productsTwo' 
           className = "next navbar">NEXT</a> : <></>
         }
       </div>

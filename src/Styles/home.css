@@ -1,0 +1,77 @@
+:root{
+  --offWhite-color : #efefef;
+  --offBlack-color : #181918;
+}
+body{
+  background-color: var(--offBlack-color);
+  position : relative;
+  margin : 0;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+  display : none;
+}
+/*Home page*/
+.para{
+  color : white;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  margin : 20px;
+  position : relative;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.paraOne{
+  top : 150px;
+}
+.paraTwo{
+  top : 200px;
+}
+#homeHeading{
+  font-size: 100px;
+  margin : 20px;
+  position : absolute;
+}
+#productList{
+  color : var(--offWhite-color);
+  margin : 20px;
+  position : absolute;
+  top : 400px;
+  left : 70vw;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+}
+.intro {
+  position : absolute;
+  top : 200px;
+  left : 50px;
+}
+.tag{
+  color : var(--offWhite-color);
+  position: absolute;
+  top : 150px;
+  display : inline;
+  right : 300px;
+}
+/*About*/
+.paraAbout{
+  top : 120px;
+}
+/*Contacts*/
+.paraContacts{
+  top : 120px;
+}
+.navBarHome{
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+  position : absolute;
+  right : 20px;
+  top : 15px;
+  list-style-type: none;
+}
+.navBarHome .homeLink:hover{
+  background-color: #000000;
+  border-radius: 15px;;
+}

@@ -54,9 +54,9 @@ function Product_Three(){
       <div className='header'>
               <h1 className='logo'>SHOPME.</h1>
               <ul className="navBarHome">
-                  <li><a className='navlink' href='http://localhost:3000/'>Home</a></li>
-                  <li><a className='navlink' href='http://localhost:3000/about'>About</a></li>
-                  <li><a className='navlink' href='http://localhost:3000/contacts'>Contacts</a></li>
+                  <li><a className='navlink' href='/'>Home</a></li>
+                  <li><a className='navlink' href='../about'>About</a></li>
+                  <li><a className='navlink' href='../contacts'>Contacts</a></li>
               </ul>
               <form className="myForm">
                 <input type='text' 
@@ -70,7 +70,7 @@ function Product_Three(){
               </form>
             </div>
       <p className='index'>3/3</p>
-      <a href="http://localhost:3000/ProductsTwo" className = "navbar prev">PREVIOUS</a>
+      <a href="../ProductsTwo" className = "navbar prev">PREVIOUS</a>
       <div id='smaller-wrapper'>
         {displayProducts.map((product,index)=>(
           <Product key={index} product={product}></Product>

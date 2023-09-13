@@ -4,7 +4,7 @@ function Home(){
     return(
         <div>
             <div className="navDiv">
-                <ul className="navBarHome">
+                <ul className="navBarHome homeNav">
                     <li><a className='navlink homeLink' href='http://localhost:3000/'>Home</a></li>
                     <li><a className='navlink homeLink' href='http://localhost:3000/about'>About</a></li>
                     <li><a className='navlink homeLink' href='http://localhost:3000/contacts'>Contacts</a></li>
