@@ -19,8 +19,8 @@ const Product = ({product}) => {
             <p id='description' className='info'>{product.description}</p>
             <p className='rating moreinfo info'>{product.rating}/5</p>
             <p className='stock moreinfo info'>Stock available : {product.stock}</p>
-            <a href='http://localhost:3000/buy' className='info buy'>Buy</a>
-            <a href='http://localhost:3000/atc' className='info atc'>Add to cart</a>
+            <a href='../buy' className='info buy'>Buy</a>
+            <a href='../atc' className='info atc'>Add to cart</a>
             <img src={product.thumbnail} className='thumbnail' alt={product.title}></img>
         </div>
     )

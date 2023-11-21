@@ -26,7 +26,8 @@ function Product_One(){
           setLoading(false);
         });
     },[]);
-  function handleSearch(){
+  function handleSearch(e){
+    e.preventDefault();
     const lowerCaseCategory = category.toLowerCase();
     fetch(`https://dummyjson.com/products/category/${lowerCaseCategory}`)
       .then((response)=>{
@@ -72,12 +73,6 @@ function Product_One(){
   function clearCategory(){
     setCategory('');
   }
-  function displayMenu(){
-    let newFlag = !flag;
-    setFlag(newFlag);
-    console.log(newFlag);
-    setMenuClass(newFlag?'.productNavInvisible':'.productNav');
-  }
   if(loading){
     return <div>Loading...</div>;
   }
@@ -93,10 +88,10 @@ function Product_One(){
                 value={category}
                 onChange={handleChange}>
                 </input>
-                <button className='search Button' onClick={handleSearch}>Search</button>
+                <button className='search Button' onClick={(e)=>{handleSearch(e)}}>Search</button>
                 <button className='clear Button' onClick={clearCategory}>Clear</button>
               </form>
-                <button className='menu' onClick={displayMenu}>Menu</button>
+                {/*<button className='menu' onClick={displayMenu}>Menu</button>*/}
                     <ul className='productNav'>
                       <li><a className='navlink' href='../'>Home</a></li>
                       <li><a className='navlink' href='../about'>About</a></li>
