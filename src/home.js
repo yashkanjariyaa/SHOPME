@@ -21,7 +21,7 @@ function Home(){
                 </p>
                 <p className="para paraTwo">We sell lifestyle.<br></br>Click on view to view products.</p>
             </div>
-            <a id='productList' href='http://localhost:3000/productsOne'>view.</a>
+            <a id='productList' href='../productsOne'>view.</a>
         </div>
 
     )
